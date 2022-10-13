@@ -18,7 +18,10 @@ from django.urls import path
 from django.conf.urls import include
 from demo import views
 
+handler404 = 'django_tabler_ng.views.error404'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('dtn/', include('django_tabler_ng.urls')),
 ]

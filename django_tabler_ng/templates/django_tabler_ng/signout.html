@@ -1,0 +1,30 @@
+{% extends "django_tabler_ng/base.html" %}
+{% load static %}
+
+{% block body_class %}
+border-top-wide border-primary d-flex flex-column
+{% endblock %}
+
+{% block content %}
+<div class="page page-center">
+  <div class="container container-tight py-4">
+    <div class="text-center mb-4">
+      <a href="." class="navbar-brand navbar-brand-autodark"><img src="{% static "img/logo.svg" %}" height="36" alt=""></a>
+    </div>
+    <form class="card card-md" action="./" method="get" autocomplete="off" novalidate>
+      <div class="card-body text-center">
+        <div class="mb-4">
+          <h2 class="card-title">Logouted</h2>
+          <p class="text-muted">See you next time</p>
+        </div>
+        
+        <div>
+          <a href="#" class="btn btn-primary w-100">
+            Leave
+          </a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
