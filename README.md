@@ -65,3 +65,5 @@ handler403 = 'django_tabler_ng.views.error403'
 handler404 = 'django_tabler_ng.views.error404'
 handler500 = 'django_tabler_ng.views.error500'
 ```
+
+Inspiration from @rbennett91/django-tabler.
