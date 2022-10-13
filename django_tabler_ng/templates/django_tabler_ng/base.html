@@ -26,17 +26,9 @@
         {% block extra_css %}
         {% endblock extra_css %}
     </head>
-    <body class="">
+    <body class="{% block body_class%}{%endblock%}">
         {% block content %}
         {% endblock content %}
-        <script src="{% static "js/require.js" %}"></script>
-        <script>
-            requirejs.config({
-                baseUrl: '.'
-            });
-            // find the static_url
-            var static_url = "{% get_static_prefix %}";
-        </script>
 
          <!-- Tabler Core -->
         <script src="{% static "js/tabler.min.js" %}" defer></script>
