@@ -4,8 +4,8 @@ Django with Tabler template.
 This project transforms the [Tabler](https://github.com/tabler/tabler) dashboard
 into a Django package. It provides an extensible base template, error page templates,
 and the necessary static assets. django-tabler-ng is based on the 
-* Tabler release v0.0.32
-* Django release LTS 3.2
+* Tabler release [v1.0.0-beta12](https://github.com/tabler/tabler/releases/tag/v1.0.0-beta12)
+* Django release [3.2 LTS](https://www.djangoproject.com/download/)
 * Python relase 3.9
 
 # Installation
