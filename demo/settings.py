@@ -127,3 +127,4 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'django_tabler_ng:sign_in'
+SITE_ID = 'django tabler demo site'
