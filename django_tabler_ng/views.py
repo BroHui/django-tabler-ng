@@ -10,6 +10,3 @@ def error404(request, exception):
 def error500(request, exception):
     return render(request, 'django_tabler_ng/500.html', status=500)
 
-
-def sign_in(request):
-    return render(request, 'django_tabler_ng/singin.html', {})
