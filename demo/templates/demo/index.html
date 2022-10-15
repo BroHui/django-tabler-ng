@@ -1,9 +1,15 @@
-{% extends "django_tabler_ng/base.html" %}
+{% extends "django_tabler_ng/blank.html" %}
 
-{% block content %}
-{% if user.is_authenticated %}
+{% block page-body %}
+
+<div class="empty">
+    <p class="empty-title">No results found</p>
+    <p class="empty-subtitle text-muted">
+        {% if user.is_authenticated %}
     <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
-{% else %}
+    {% else %}
     <p>Welcome, new user. Please log in.</p>
-{% endif %}
+    {% endif %}
+    </p>
+</div>
 {% endblock %}
