@@ -9,9 +9,11 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='django-tabler-ng',
-    version='0.0.1',
+    setup_requires=['setuptools_scm'],
+    use_scm_version={'version_scheme': 'post-release'},
     description='Django wit Tabler template',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     url='https://github.com/BroHui/django-tabler-ng',
     classifiers=[
         "Development Status :: 4 - Beta",
