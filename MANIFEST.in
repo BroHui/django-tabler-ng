@@ -5,5 +5,6 @@ include README.md
 include LICENSE.txt
 
 # Include html templates and static files
-recursive-include django_tabler_ng/templates *
-recursive-include django_tabler_ng/static *
+recursive-include src/django_tabler_ng/templates *
+recursive-include src/django_tabler_ng/templatetags *
+recursive-include src/django_tabler_ng/static *
