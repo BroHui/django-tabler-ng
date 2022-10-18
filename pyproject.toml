@@ -1,5 +1,5 @@
 [tool.djlint]
-ignore="H006,H019,H023,H030,H031,T003"
+ignore="H006,H017,H019,H023,H030,H031,T003"
 
 [tool.poetry.dependencies]
 python = "^3.9"

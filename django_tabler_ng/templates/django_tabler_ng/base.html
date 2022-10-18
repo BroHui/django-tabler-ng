@@ -1,6 +1,11 @@
 {% load static %}
 <!doctype html>
-<html lang="en" dir="ltr" meta="">
+{% load bootstrap5 %}
+{% if 'use_i18n'|bootstrap_setting %}
+    {% load i18n %}
+    {% get_current_language as LANGUAGE_CODE %}
+{% endif %}
+<html lang="{{ LANGUAGE_CODE|default:'en_us' }}" dir="ltr" meta="">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport"
@@ -19,21 +24,32 @@
         <link rel="shortcut icon"
               type="image/x-icon"
               href="{% static "img/favicon.ico" %}"/>
-        <title>{{ request.site.name }}</title>
+        <title>
+            {% block bootstrap5_title %}django-bootstrap-v5 template title{% endblock %}
+        </title>
         <!-- CSS files -->
         <link href="{% static "css/tabler.min.css" %}" rel="stylesheet"/>
         <link href="{% static "css/tabler-flags.min.css" %}" rel="stylesheet"/>
         <link href="{% static "css/tabler-payments.min.css" %}" rel="stylesheet"/>
         <link href="{% static "css/tabler-vendors.min.css" %}" rel="stylesheet"/>
+        <!-- Bootstrap JavaScript if it is in head -->
+        {% if 'javascript_in_head'|bootstrap_setting %}
+            {% bootstrap_javascript %}
+        {% endif %}
         {% block extra_css %}
         {% endblock extra_css %}
+        {% block bootstrap5_extra_head %}{% endblock %}
     </head>
     <body class="{% block body_class %} {% endblock body_class %}">
-        {% block content %}
-        {% endblock content %}
+        {% block bootstrap5_before_content %}{% endblock %}
+        {% block bootstrap5_content %}{% endblock %}
+        {% block bootstrap5_after_content %}{% endblock %}
         <!-- Tabler Core -->
         <script src="{% static "js/tabler.min.js" %}" defer></script>
-        {% block extra_js %}
-        {% endblock extra_js %}
+        <!-- Bootstrap JavaScript if it is in body -->
+        {% if not 'javascript_in_head'|bootstrap_setting %}
+            {% bootstrap_javascript %}
+        {% endif %}
+        {% block bootstrap5_extra_script %}{% endblock %}
     </body>
 </html>
