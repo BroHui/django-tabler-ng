@@ -11,7 +11,7 @@ RUN apt-get update && \
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/ \
 	&& pip config set install.trusted-host pypi.tuna.tsinghua.edu.cn 
 RUN pip install -U pip \
-	&& pip install "Django==3.2" mysqlclient uwsgi \
+	&& pip install "Django==3.2" mysqlclient uwsgi djlint beautifulsoup4 \
 	&& rm -rf /root/.cache/pip/*
 
 WORKDIR /app
