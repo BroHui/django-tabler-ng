@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
-from demo import views
+from app import views
 
 handler404 = 'django_tabler_ng.views.error404'
 

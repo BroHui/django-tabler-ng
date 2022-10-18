@@ -11,9 +11,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os, sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ""))
+# Include BOOTSTRAP5_FOLDER in path
+BOOTSTRAP5_FOLDER = os.path.abspath(os.path.join(BASE_DIR, "../src"))
+if BOOTSTRAP5_FOLDER not in sys.path:
+    sys.path.insert(0, BOOTSTRAP5_FOLDER)
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,8 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
     'django_tabler_ng',
-    'demo',
 ]
 
 MIDDLEWARE = [
@@ -51,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'demo.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
@@ -69,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'demo.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
@@ -78,7 +83,7 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 DATABASES = {  
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'demodatabase'
+        'NAME': os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
@@ -127,4 +132,4 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'django_tabler_ng:sign_in'
-SITE_ID = 'django tabler demo site'
+SITE_ID = 'django tabler site'
