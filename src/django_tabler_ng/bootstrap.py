@@ -22,12 +22,12 @@ BOOTSTRAP5_DEFAULTS = {
     "required_css_class": "",
     "error_css_class": "is-invalid",
     "success_css_class": "is-valid",
-    "formset_renderers": {"default": "bootstrap5.renderers.FormsetRenderer"},
-    "form_renderers": {"default": "bootstrap5.renderers.FormRenderer"},
+    "formset_renderers": {"default": "django_tabler_ng.renderers.FormsetRenderer"},
+    "form_renderers": {"default": "django_tabler_ng.renderers.FormRenderer"},
     "field_renderers": {
-        "default": "bootstrap5.renderers.FieldRenderer",
-        "inline": "bootstrap5.renderers.InlineFieldRenderer",
-        "horizontal": "bootstrap5.renderers.HorizontalFieldRenderer",
+        "default": "django_tabler_ng.renderers.FieldRenderer",
+        "inline": "django_tabler_ng.renderers.InlineFieldRenderer",
+        "horizontal": "django_tabler_ng.renderers.HorizontalFieldRenderer",
     },
 }
 
