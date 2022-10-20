@@ -5,3 +5,8 @@ else
 	@echo "Error - Not on branch master!"
 	@exit 1;
 endif
+
+publish:
+	python setup.py sdist bdist_wheel
+	twine check dist/*
+	twine upload dist/*
