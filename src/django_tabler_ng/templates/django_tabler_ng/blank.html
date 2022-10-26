@@ -1,5 +1,6 @@
 {% extends "django_tabler_ng/base.html" %}
 {% load static %}
+{% load django_tabler_ng %}
 {% block bootstrap5_content %}
   <div class="page">
     <!-- Navbar -->
@@ -46,6 +47,7 @@
         </div>
       </div>
     </header>
+    {% django_tabler_menu %}
     <div class="page-wrapper">
       <!-- Page body -->
       <div class="page-body">
