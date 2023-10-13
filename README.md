@@ -67,3 +67,9 @@ handler500 = 'django_tabler_ng.views.error500'
 ```
 
 Inspiration from @rbennett91/django-tabler.
+
+
+### Debug with docker
+```
+docker run -it --rm -v ./example:/app -v ./src/django_tabler_ng:/app/django_tabler_ng -v ./requirements.txt:/app/requirements.txt -p 8000:8000 django:lts /bin/bash
+```
