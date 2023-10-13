@@ -2,6 +2,6 @@
 ignore="H006,H017,H019,H023,H030,H031,T002,T003"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-django = "^3.2" 
-beautifulsoup4 = "^4.8.0"
+python = "^3.11"
+django = "^4.2" 
+beautifulsoup4 = "^4.12.2"

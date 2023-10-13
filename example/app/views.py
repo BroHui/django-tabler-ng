@@ -2,6 +2,7 @@
 
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.contrib import messages
 from django.core.files.storage import default_storage
@@ -26,11 +27,14 @@ def index(request):
     return render(request, 'app/index.html', {})
 
 
+class BlankPageView(LoginRequiredMixin, TemplateView):
+    template_name = "django_tabler_ng/blank.html"
+
+
 class HomePageView(TemplateView):
     template_name = "app/home.html"
 
     def get_context_data(self, **kwargs):
-        print(sys.path)
         context = super().get_context_data(**kwargs)
         messages.info(self.request, "hello http://example.com")
         return context

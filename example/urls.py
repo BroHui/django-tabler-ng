@@ -11,13 +11,15 @@ from app.views import (
     HomePageView,
     MiscView,
     PaginationView,
-    index
+    index,
+    BlankPageView
 )
 
 handler404 = 'django_tabler_ng.views.error404'
 
 urlpatterns = [
     path("", HomePageView.as_view(), name="home"),
+    path("blank", BlankPageView.as_view(), name="blank"),
     path("index", index, name="index"),
     path("formset", DefaultFormsetView.as_view(), name="formset_default"),
     path("form", DefaultFormView.as_view(), name="form_default"),
