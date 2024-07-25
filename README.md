@@ -1,5 +1,6 @@
 # django-tabler-ng
 Django with Tabler template.
+Django LTS版本 搭载Tabler前端UI
 
 This project transforms the [Tabler](https://github.com/tabler/tabler) dashboard
 into a Django package. It provides an extensible base template, error page templates,
